@@ -1,6 +1,6 @@
-/* Default styling for GRAS iFrame 
-   Under utvikling 
-   versjon 0.1 
+/* Default styling for GRAS iFrame
+   Under utvikling
+   versjon 0.1
 */
 
 @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
@@ -12,304 +12,447 @@
 }
 
 body {
-	background-color: #f1eff0;
-	color: #000;
-	margin: 0;
-	font-family: 'Varela Round', sans-serif;
-	font-size: 0.85em;
-	font-stretch: condensed;
-	font-style: normal;
+  background: #fff;
+  color: #000;
+  margin: 0;
+  font-family: 'Varela Round', sans-serif;
+  font-size: 0.75em;
+  font-stretch: condensed;
+  font-style: normal;
 }
 
-.resultbox{
-	width: 100%;
-	padding: 0 15px;
-
+div {
+  float: left;
 }
-.narrow_display{
+.resultbox {
   width: 100%;
-	clear: both;
+  display: flex;
+  flex-direction: column;
+  padding: 0 30px;
 }
 
-.wide_display{
+.narrow_display {
+  width: 100%;
+  margin: 20px auto;
+  clear: both;
+}
+
+.wide_display {
   width: 100%;
   clear: both;
 }
 
-.buttonDisabled{
-  background: #DDDDDD;
-    border: 1px solid rgba(0, 0, 0, 0.20);
-  padding: 10px 20px;
-  border-radius: 20px;
-  color: #000;
-  cursor: not-allowed;
+.buttonDisabled {
+  background: #dddddd;
+  border-radius: 16px;
+  font-size: 16px;
+  visibility: visible;
+  cursor: pointer;
+  display: inline-block;
+  min-height: 1em;
+  outline: 0;
+  border: none;
+  vertical-align: baseline;
+  color: rgb(166, 166, 166);
+  font-family: OpenSans, sans-serif;
+    margin: 0 auto;
+  padding: 1em;
+  text-transform: none;
+  text-shadow: none;
+  font-weight: 400;
+  line-height: 1em;
+  font-style: normal;
+  text-align: center;
+  text-decoration: none;
+  z-index: 9999999;
+    letter-spacing: 0.55px;
 }
 
-.buttonEnabled{
-  /* background: #77FF77; */
-  color: #000;
-  background-image: linear-gradient(to top, #15d8e2 0%, #54ef93 100%);
-  border: none;
-  padding: 10px 20px;
-  border-radius: 12px;
-  color: #fff;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+.buttonEnabled {
+  border-radius: 10px;
+  visibility: visible;
   cursor: pointer;
+  display: inline-block;
+  min-height: 1em;
+  outline: 0;
+  border: none;
+  vertical-align: baseline;
+  margin: 0 auto;
+  padding: 1.5em;
+  text-transform: none;
+  text-shadow: none;
+  line-height: 1em;
+  font-style: normal;
+  text-align: center;
+  text-decoration: none;
+  z-index: 9999999;
+  color: #fff;
+  font-size: 16px;
+  font-family: OpenSans, sans-serif;
+  font-weight: normal;
+  letter-spacing: 0.55px;
+  background-color: white;
+  color: #23ddd0;
+  border-radius: 50px;
 }
 
 /* loantype heading*/
-.loanType.wide , .loanType.narrow{
-	position: relative;
-	background: rgb(203, 212, 212);
-	color: rgb(33, 37, 41);
-	font-family: Arial;
-	font-size: 1.5em;
-	font-stretch: normal;
-	font-weight: 700;
-	padding: 20px 30px;
-	width: 100%;
-	color: white;
-	cursor: pointer;
-	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
-	background-image: linear-gradient(to top, #15d8e2 0%, #54ef93 100%);
+.loanType.wide,
+.loanType.narrow {
+  background: #fff;
+  border: 1px solid rgb(151, 151, 151);
+  color: rgb(33, 37, 41);
+  font-family: OpenSans, sans-serif;
+  font-size: 1.5em;
+  font-stretch: normal;
+  font-weight: 700;
+  padding-right: 0.25em;
+  padding-left: 0.25em;
+  padding-top: 0.7em;
+  padding-bottom: 0.7em;
+  clear: both;
+  width: 100%;
+  margin-bottom: 10px;
 }
 
-.loanType.wide::after {
-	   position: absolute;
-   top: 50%;
-   right: 25px;
-   transform: translateY(-50%);
+.loanType.wide::after,
+.loanType.narrow::after {
+  float: right;
+  content: '-';
+  padding-right: 10px;
 }
 
-#grasform {
-	font-size: 18px;
+.loanType.wide.showLoanTable::after,
+.loanType.narrow.showLoanTable::after {
+  content: '+';
+  float: right;
+  padding-right: 10px;
 }
 
-.loanType.wide::after, .loanType.narrow::after{
-   content: 'hide';
-   border: 1px solid #ffffff;
-   border-radius: 9px;
-   font-size: 13px;
-   font-weight: 300;
-   padding: 5px 10px;
-   cursor: pointer;
-   box-shadow: 1px 1px 1px #ffe5e5;
+.loanType.wide.showLoanTable + table {
+  display: none;
+}
+.loanType.narrow.showLoanTable + table {
+  display: none;
 }
 
-.loanType.wide.showLoanTable::after, .loanType.narrow.showLoanTable::after {
-	content: 'open';
-}
-
-.loanType.wide.showLoanTable + table { display: none; }
-.loanType.narrow.showLoanTable + table { display: none; }
-	
-th.narrow{
-	width: 50%;
-	vertical-align: top;
-  text-align: left;
-}
-
-td.narrow{
+th.narrow {
   width: 50%;
   vertical-align: top;
   text-align: left;
 }
 
-table{
-	width: 100%;
-	border: none;
-	border-collapse: collapse;
+td.narrow {
+  width: 50%;
+  vertical-align: top;
+  text-align: left;
 }
 
-.loanTable{
+table {
+  width: 100%;
+  border: none;
+  border-collapse: collapse;
+}
+
+.loanTable {
   page-break-inside: avoid; /* hindrer at tabell splittes ved utskrift*/
 }
 
-th,td{
+th,
+td {
   padding-right: 0.5em;
-  padding-left: 0.5em;
+  padding-left: 1em;
   padding-top: 0.5em;
   padding-bottom: 0.5em;
-  white-space: nowrap;
+  white-space: normal;
 }
 
-/* left adjusted columns*/ 
-.financialInstitutionName, .installmentChargePeriod, .coBorrower, .receivedTime, .processedTime{
+/* left adjusted columns*/
+.financialInstitutionName,
+.installmentChargePeriod,
+.coBorrower,
+.receivedTime,
+.processedTime {
   vertical-align: top;
   text-align: left;
 }
 
 /* right adjusted columns*/
-.originalBalance, .balance, .creditLimit, .interestBearingBalance, .nonInterestBearingBalance, .terms, .nominalInterestRate, .installmentCharges{
+.originalBalance,
+.balance,
+.creditLimit,
+.interestBearingBalance,
+.nonInterestBearingBalance,
+.terms,
+.nominalInterestRate,
+.installmentCharges {
   vertical-align: top;
   text-align: right;
 }
 
-.receivedTime{
-  float:left;
+.receivedTime {
+  float: left;
 }
 
-.financialInstitutionName{
-  font-weight: 700; 
+.financialInstitutionName {
+  font-weight: 700;
 }
 
-.sumTotal{
+.sumTotal {
   font-weight: 700;
   vertical-align: top;
   text-align: left;
 }
 
-.sumCreditLimit, .sumInterestBearingBalance, .sumNonInterestBearingBalance{
+.sumCreditLimit,
+.sumInterestBearingBalance,
+.sumNonInterestBearingBalance {
   font-weight: 700;
   vertical-align: top;
   text-align: right;
 }
 
-.stripe{
-  background: #EEEEEE;	
+.stripe {
+  background: #ebfdf2;
 }
 
-.spaceBeforeLoanType{
+.spaceBeforeLoanType {
+  padding: 20px;
+  clear: both;
+    display: none;
+}
+
+.spaceBeforeSum {
   padding: 10px;
   clear: both;
 }
 
-.spaceBeforeSum{
+.spaceBeforeFooter {
   padding: 10px;
   clear: both;
 }
 
-.spaceBeforeFooter{
-  padding: 10px;
-  clear: both;
-}
-
-.message{ /* melding fra gjeldsregisteret. F.eks.: Ingen usikret gjeld er registrert ++*/
+.message {
+  /* melding fra gjeldsregisteret. F.eks.: Ingen usikret gjeld er registrert ++*/
   padding-left: 0.5em;
   padding-top: 1.2em;
   padding-bottom: 1.2em;
-  font-weight: 700; 
+  font-weight: 700;
 }
 
-.errorMessage h2{ /* melding fra infotorg. F.eks.: feil med id-token ++*/
+.errorMessage h2 {
+  /* melding fra infotorg. F.eks.: feil med id-token ++*/
   font-size: 2em;
 }
 
-.errorMessage{ /* melding fra infotorg. F.eks.: feil med id-token ++*/
+.errorMessage {
+  /* melding fra infotorg. F.eks.: feil med id-token ++*/
   padding: 0.5em;
 }
 
-p.feil{ /* Feilet mot Transaksjonsmotor */
-	padding: 0.5em;
-	font-weight: 700; 
-}
-
-.heading{
-  padding-left: 0.5em;
-  padding-top: 1.2em;
-  padding-bottom: 1.2em;
+p.feil {
+  /* Feilet mot Transaksjonsmotor */
+  padding: 0.5em;
   font-weight: 700;
-  display: flex;
-  flex-direction: column;
-  font-size: 16px;
-  line-height: 1.6;
 }
 
-.headerInfo{
-	white-space: nowrap;
+.heading {
+    /* text-align: left; */
+    /* padding-left: 0.5em; */
+    /* padding-bottom: 1.2em; */
+    padding-top: 20px;
+    clear: both;
+    font-size: 10px;
+    /* width: 80%; */
+    /* margin: 0 auto; */
+    margin: 0 0 20px 0;
 }
 
-.headerFnr{
+.headerInfo {
+  white-space: normal;
+    color: #000;
+    font-size: 10px;
+    font-weight: normal;
+    text-align: center;
+    letter-spacing: 0.48px;
+    line-height: 16px;
+}
+
+.headerFnr {
+  padding-left: 0em;
   white-space: nowrap;
+  font-style: italic;
+  font-weight: normal;
+  font-size: 12px;
+}
+.headerFnr::before {
+  content: ' ';
+  display: block;
+    padding-top: 10px;
 }
 
-.summeringTotal{
-	width: 20em;
-	font-size: 13.9px;
+.summeringTotal {
+    display: flex;
+    align-self: flex-start;
 }
 
-.summeringTotal th{
-	vertical-align: top;
-  text-align: left;
+.summeringTotal th {
+    vertical-align: bottom;
+    text-align: left;
+    color: #000;
+    font-size: 14px;
+    font-weight: normal;
+    letter-spacing: 0.48px;
+    padding: 0 0 5px 0;
 }
 
-.delGjeldsinfo{
+.summeringTotal td {
+    vertical-align: top;
+    text-align: left;
+    padding: 0 0 2px 5px;
+    color: #1b1b1b;
+    font-size: 21px;
+    font-weight: bold;
+    letter-spacing: 0.48px;
+}
+
+.delGjeldsinfo {
+    display: flex;
+    /* align-self: center; */
+    /* width: 80%; */
+    /* background: #242424; */
+    border-radius: 3px;
+    margin-top: 20px;
+    background-image: linear-gradient(to top, #15d8e2 0%, #54ef93 100%);
+    color: white;
+    border-radius: 30px;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+#grasform {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+#grasform td {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 20px 10px 10px 10px;
+    width: 80%;
+    justify-content: center;
+    align-items: center;
+    color: #f4f4f4;
+    font-size: 16.5px;
+    font-weight: normal;
+    letter-spacing: 0.5px;
+    line-height: 20px;
+}
+
+#grasform tr:first-child td:first-child {
+    flex-direction: row !important;
+}
+
+#delGjeldButton {
   float: left;
+  /* position: relative;
+  visibility: hidden; */
 }
 
-#delGjeldButton{
-  float: left;
-}
-
-.deltGjeldsinfoMelding{
+.deltGjeldsinfoMelding {
   float: left;
   width: 50%;
   padding-top: 20px;
   display: none;
 }
 
-.deltGjeldsinfoError{
+.deltGjeldsinfoError {
   padding-left: 20px;
-  color: #FF0000;
+  color: #ff0000;
   float: left;
 }
 
-.footer{
-	padding: 0.5em;
-	padding-bottom: 2em;
+.footer {
+  padding: 0 30px;
+  padding-bottom: 2em;
 }
 
-.nota{
+.nota {
   width: 90%; /*ie tilpasning*/
   clear: both;
   padding-bottom: 2em;
 }
 
-.notaSign{
-	color: #FF8C00; 
-	font-weight: bold; 
-	cursor: default;
-	padding: 0.5em;
+.notaSign {
+  color: #ff8c00;
+  font-weight: bold;
+  cursor: default;
+  padding: 0.5em;
 }
 
-.notaText{
-  
+.notaText {
 }
-
-.loanTable {
-	width: 100%;
+#grasform input[type='checkbox'] {
+  cursor: pointer;
+  color: #ff8c00;
+  position: relative;
+  display: inline-block;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  outline: 0;
+  vertical-align: sub;
+  font-style: normal;
+  min-height: 17px;
+  font-size: 1rem;
+  line-height: 17px;
+  min-width: 17px;
 }
-
-.loanTable tr:nth-of-type(odd) {
-  background: #f6f6f6;
-}
-
-.loanTable tr:nth-of-type(even) {
-  
-  background: #dcedff;
-}
-
-.loanTable th, .loanTable td {
-	padding: 12px 5px;
-	text-align: left;
+#grasform input[type='checkbox' i] {
+  white-space: normal;
+  cursor: default;
+  -webkit-appearance: checkbox;
+  box-sizing: border-box;
+  margin: 3px 2ex;
+  padding: initial;
+  border: initial;
+  /* background: red; */
 }
 
 /*--------- Narrow screen ------------*/
-@media only screen and (max-width: 1200px)  { 
-	.narrow_display{
-	  display: block!important;
-	}
-  .wide_display{
-    display: none!important;
+@media only screen and (max-width: 1200px) {
+  .narrow_display {
+    display: block !important;
+  }
+  .wide_display {
+    display: none !important;
   }
 }
 
 /*--------- wide screen ------------*/
-@media only screen and (min-width: 1201px)  {
-	.narrow_display{
-    display: none!important;
+@media only screen and (min-width: 1201px) {
+  .narrow_display {
+    display: none !important;
   }
-  .wide_display{
-    display: block!important;
+  .wide_display {
+    display: block !important;
   }
+}
+
+@media only screen and (max-width: 600px) {
+    .delGjeldsinfo {
+        width: 100% !important;
+    }
+    .heading {
+        width: 100%;
+        padding-bottom: 2em;
+    }
+    .buttonEnabled, .buttonDisabled {
+        font-size: 12px;
+    }
+    #grasform td {
+        font-size: 12px;
+        line-height: 14px;
+        width: auto;
+    }
 }
