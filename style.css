@@ -56,6 +56,7 @@ div {
   z-index: 9999999;
   letter-spacing: 0.55px;
   max-width: 400px;
+  margin-bottom: 20px;
 }
 
 .buttonDisabled {
@@ -63,6 +64,7 @@ div {
   visibility: visible;
   cursor: pointer;
   color: rgb(166, 166, 166);  
+  cursor: not-allowed;
 }
 
 .buttonEnabled {
@@ -290,7 +292,7 @@ p.feil {
     color: white;
     margin: 20px 0;
     border-radius: 30px;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+    
 }
 
 #grasform {
@@ -341,9 +343,7 @@ p.feil {
   }
 
 .deltGjeldsinfoError {
-  padding-left: 20px;
   color: #ff0000;
-  float: left;
 }
 
 .footer {
