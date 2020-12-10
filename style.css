@@ -1,8 +1,3 @@
-/* Default styling for GRAS iFrame
-   Under utvikling
-   versjon 0.1
-*/
-
 @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
 
 *,
@@ -42,21 +37,15 @@ div {
   clear: both;
 }
 
-.buttonDisabled {
-  background: #dddddd;
-  border-radius: 16px;
+#grasform button {
+  border-radius: 30px;
   font-size: 16px;
-  visibility: visible;
-  cursor: pointer;
   display: inline-block;
-  min-height: 1em;
-  outline: 0;
   border: none;
+  padding: 25px 30px;
+  outline: 0;
   vertical-align: baseline;
-  color: rgb(166, 166, 166);
-  font-family: OpenSans, sans-serif;
-    margin: 0 auto;
-  padding: 1em;
+  font-family: inherit;
   text-transform: none;
   text-shadow: none;
   font-weight: 400;
@@ -65,35 +54,22 @@ div {
   text-align: center;
   text-decoration: none;
   z-index: 9999999;
-    letter-spacing: 0.55px;
+  letter-spacing: 0.55px;
+  max-width: 400px;
+}
+
+.buttonDisabled {
+  background: #dddddd;
+  visibility: visible;
+  cursor: pointer;
+  color: rgb(166, 166, 166);  
 }
 
 .buttonEnabled {
-  border-radius: 10px;
   visibility: visible;
   cursor: pointer;
-  display: inline-block;
-  min-height: 1em;
-  outline: 0;
-  border: none;
-  vertical-align: baseline;
-  margin: 0 auto;
-  padding: 1.5em;
-  text-transform: none;
-  text-shadow: none;
-  line-height: 1em;
-  font-style: normal;
-  text-align: center;
-  text-decoration: none;
-  z-index: 9999999;
-  color: #fff;
-  font-size: 16px;
-  font-family: OpenSans, sans-serif;
-  font-weight: normal;
-  letter-spacing: 0.55px;
-  background-color: white;
-  color: #23ddd0;
-  border-radius: 50px;
+  color: #ffffff;
+  background-image: linear-gradient(to top, #15d8e2 0%, #54ef93 100%);
 }
 
 /* loantype heading*/
@@ -318,7 +294,7 @@ p.feil {
 
 .delGjeldsinfo {
     display: flex;
-    background-image: linear-gradient(to top, #15d8e2 0%, #54ef93 100%);
+    /* background-image: linear-gradient(to top, #15d8e2 0%, #54ef93 100%); */
     color: white;
     margin: 20px 0;
     border-radius: 30px;
@@ -334,12 +310,11 @@ p.feil {
 #grasform td {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     margin: 0 auto;
     padding: 20px 10px 10px 10px;
-    width: 80%;
-    justify-content: center;
-    align-items: center;
-    color: #f4f4f4;
+    color: black;
     font-size: 16.5px;
     font-weight: normal;
     letter-spacing: 0.5px;
@@ -409,7 +384,7 @@ p.feil {
   cursor: default;
   -webkit-appearance: checkbox;
   box-sizing: border-box;
-  margin: 3px 2ex;
+  margin: 0 10px 0 0;
   padding: initial;
   border: initial;
   /* background: red; */
@@ -452,5 +427,4 @@ p.feil {
         width: auto;
     }
 }
-
 
